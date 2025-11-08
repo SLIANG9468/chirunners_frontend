@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) =>{
         if ('error' in data){ // checking the login response for an error from my backend
             return false
         }
-        setRunner(data.Runner)
+        setRunner(data.runner)
         setToken(data.token)
         localStorage.setItem('runner', JSON.stringify(data.runner))
         localStorage.setItem('token', data.token)
