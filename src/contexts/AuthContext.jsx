@@ -9,14 +9,23 @@ export const useAuth = () => {
     return context;
 }
 
-const API_URL = 'http://127.0.0.1:5000'
+const API_URL = import.meta.env.VITE_API_URL
 
 //Create the Context Provider (wrapper that I will place over my app)
 export const AuthProvider = ({ children }) =>{
     const [runner, setRunner] = useState(localStorage.getItem('runner') ? JSON.parse(localStorage.getItem('runner')) : null) //Runner will be an object in JSON
     const [token, setToken] =useState(localStorage.getItem('token') || null)
 
-        //login function
+    //Grab already logged in runner
+    useEffect(()=> {
+        const savedToken = localStorage.getItem('token')
+        const savedRunner = localStorage.getItem('runner')
+        setToken(savedToken)
+        const runnerData = JSON.parse(savedRunner)
+        setRunner(runnerData) //parsing JSON object from the LS, and setting the object to our Runner
+    },[])
+
+    //login function
     const login = async (email, password) =>{
         const response = await fetch(API_URL + '/runners/login', {
             method: 'POST',
@@ -46,10 +55,50 @@ export const AuthProvider = ({ children }) =>{
         return true
     }
 
+    const logout = () => {
+        setToken(null) //clearing saved tokens
+        setRunner(null)
+        localStorage.removeItem('token') //potentially want to clear entire ls
+        localStorage.removeItem('runner')
+    }
+
+    //Register Runner Function
+    const registerRunner = async (registerData) => {
+        const response = await fetch(API_URL + '/runners',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(registerData)
+        })
+
+        const responseData = await response.json()
+        console.log(responseData)
+    }
+
+    //Add Team Function
+    const addTeam = async (teamData) => {
+        const response = await fetch(API_URL + '/teams',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ token
+            },
+            body: JSON.stringify(teamData)
+        })
+
+        const responseData = await response.json()
+        console.log(responseData)
+    }
+
     const value = {
         token,
         runner,
         login,
+        logout,
+        registerRunner, 
+        addTeam,
+        isAuthenticated: token ? true : false
     }
         
     return (
