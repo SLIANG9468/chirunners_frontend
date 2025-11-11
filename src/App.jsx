@@ -24,12 +24,14 @@ function App() {
           <Route path='/addteam' element={<AddTeamView/>} />
           <Route path='/myteams' element={<TeamsView/>} />
           <Route path='/profile' element={<ProfileView/>} />
+          <Route path='/store' element={<ChiStoreView/>} />
+
+
 
           <Route path='/join' element={<RegisterRunnerView/>} />
           <Route path='/login' element={<LoginView/>} />
           <Route path='/chimarathon' element={<ChiMarathonView/>} />
           <Route path='/races' element={<RacesView/>} />
-          <Route path='/store' element={<ChiStoreView/>} />
           <Route path='/volunteers' element={<VolunteersView/>} />
 
         </Routes>

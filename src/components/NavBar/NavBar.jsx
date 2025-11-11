@@ -21,6 +21,7 @@ const NavBar = () => {
     <ul id="navBar">
       
             <NavLink className={'navLink'} to='/'>Home</NavLink>
+            <NavLink className={'navLink'} to='/store'>Store</NavLink>
 
             {isAuthenticated ?
               <>
