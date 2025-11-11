@@ -22,14 +22,6 @@ const NavBar = () => {
       
             <NavLink className={'navLink'} to='/'>Home</NavLink>
 
-            <NavLink className={'navLink'} to='/chimarathon'>Chicago Marathon</NavLink>
-
-            <NavLink className={'navLink'} to='/races'>Races</NavLink>
-
-            <NavLink className={'navLink'} to='/store'>Store</NavLink>
-
-            <NavLink className={'navLink'} to='/volunteers'>Volunteers</NavLink>
-
             {isAuthenticated ?
               <>
                 <NavLink className={'navLink'} to='/addteam'>Add Team</NavLink>
@@ -51,7 +43,7 @@ const NavBar = () => {
                   textDecoration: "none",
                 }}
               >
-                Join Now
+                Register
               </NavLink>
               </>
             }

@@ -10,6 +10,7 @@ import RegisterRunnerView from "./views/RegisterRunner/RegisterRunnerView"
 import NavBar from "./components/NavBar/NavBar"
 import TeamMembers from "./views/TeamMembers/TeamMembers"
 import AddTeamView from "./views/AddTeam/AddTeamView"
+import ProfileView from "./views/Profile/ProfileView"
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/RegisterRunner' element={<RegisterRunnerView/>} />
           <Route path='/addteam' element={<AddTeamView/>} />
           <Route path='/myteams' element={<TeamsView/>} />
+          <Route path='/profile' element={<ProfileView/>} />
 
           <Route path='/join' element={<RegisterRunnerView/>} />
           <Route path='/login' element={<LoginView/>} />

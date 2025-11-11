@@ -17,11 +17,11 @@ const TeamsView = () => {
             }
 
         try {
-            const response = await fetch(`${API_URL}/teams/my-teams`, {
+            const response = await fetch(API_URL + '/teams/my-teams', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': 'Bearer '+ token
                 }
             });
             
@@ -47,7 +47,7 @@ const TeamsView = () => {
                 {teams?.map((team) => (
                     <div key = {team.id}>
                         <h3>
-                            Team Name: {team.team_name}; Country: {team.country}; City: {team.city}; Contact: {team.team_contact?.first_name || 'N/A'}
+                            Team Name: {team.team_name}; Country: {team.country}; City: {team.city}; Contact: {team.team_contact.first_name}
                         </h3> 
                     </div>
                 )
