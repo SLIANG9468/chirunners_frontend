@@ -23,10 +23,11 @@ const NavBar = () => {
             <NavLink className={'navLink'} to='/'>Home</NavLink>
             <NavLink className={'navLink'} to='/store'>Store</NavLink>
 
+
             {isAuthenticated ?
               <>
                 <NavLink className={'navLink'} to='/addteam'>Add Team</NavLink>
-                <NavLink className={'navLink'} to='/myteams'>My Teams</NavLink>
+                <NavLink className={'navLink'} to='/myteam'>My Team</NavLink>
                 <NavLink to='/profile'className='navLink'>Profile</NavLink>
                 <span onClick={handleLogout} className="navLink" style={{cursor: 'pointer'}}>Logout</span>
               </>
@@ -35,7 +36,7 @@ const NavBar = () => {
               <NavLink style={{marginLeft: "12px"}}className={'navLink'} to='/login'>Login</NavLink>
 
               <NavLink className={'navLink'} 
-                to="/RegisterRunner"
+                to="/join"
                 style={{
                   padding: "6px 12px",
                   backgroundColor: "#d32f2f",  // red
@@ -44,7 +45,7 @@ const NavBar = () => {
                   textDecoration: "none",
                 }}
               >
-                Register
+                Join
               </NavLink>
               </>
             }

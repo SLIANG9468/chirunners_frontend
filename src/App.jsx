@@ -11,6 +11,7 @@ import NavBar from "./components/NavBar/NavBar"
 import TeamMembers from "./views/TeamMembers/TeamMembers"
 import AddTeamView from "./views/AddTeam/AddTeamView"
 import ProfileView from "./views/Profile/ProfileView"
+import TeamView from "./views/Team/TeamView"
 
 function App() {
 
@@ -20,12 +21,11 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={<HomeView/>} />
-          <Route path='/RegisterRunner' element={<RegisterRunnerView/>} />
+          <Route path='/join' element={<RegisterRunnerView/>} />
           <Route path='/addteam' element={<AddTeamView/>} />
-          <Route path='/myteams' element={<TeamsView/>} />
+          <Route path='/myteam' element={<TeamView/>} />
           <Route path='/profile' element={<ProfileView/>} />
           <Route path='/store' element={<ChiStoreView/>} />
-
 
 
           <Route path='/join' element={<RegisterRunnerView/>} />

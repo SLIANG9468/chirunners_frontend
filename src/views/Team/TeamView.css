@@ -1,0 +1,227 @@
+.team-view {
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+}
+
+.team-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.team-header {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.team-header h1 {
+  color: #333;
+  font-size: 3rem;
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.team-description {
+  color: #666;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.team-contact {
+  text-align: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.contact-label {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.contact-name {
+  color: #4CAF50;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.team-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.stat-value {
+  color: #4CAF50;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.runners-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.runners-section h2 {
+  color: #333;
+  font-size: 2.2rem;
+  margin: 0 0 30px 0;
+  font-weight: bold;
+}
+
+.no-runners {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  padding: 40px;
+}
+
+.runners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.runner-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.runner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: #4CAF50;
+}
+
+.runner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.runner-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.runner-role {
+  background-color: #4CAF50;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.runner-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.info-label {
+  color: #666;
+  font-weight: 600;
+}
+
+.info-value {
+  color: #333;
+  text-align: right;
+  word-break: break-word;
+  max-width: 60%;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #666;
+  padding: 100px 20px;
+}
+
+.error-message {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: #f44336;
+  color: white;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-header {
+    padding: 30px 20px;
+  }
+
+  .team-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .team-description {
+    font-size: 1.1rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .runners-section {
+    padding: 30px 20px;
+  }
+
+  .runners-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .runners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .runner-card {
+    padding: 20px;
+  }
+
+  .runner-name {
+    font-size: 1.3rem;
+  }
+}

@@ -27,7 +27,7 @@ const HomeView = () => {
         marginTop: '0',
         background: 'transparent',
         backdropFilter: 'none',
-        padding: '180px',
+        padding: '20px',
         maxWidth: '1200px'
       }}>
         <p className='description' style={{
@@ -35,11 +35,15 @@ const HomeView = () => {
           color: 'black',
           fontWeight: 'bold',
         }}>
-          Chinese American runners in the Chicago area coming together to run, learn, and have fun. 
-          <br></br>Be part of the team as we train for the 2026 Chicago Marathon — join 87 runners chasing 26.2 miles! 🏃‍♀️🏃‍♂️✨
-
+          Chinese American runners in the Chicago area coming together to run, learn, and have fun.
         </p>
-
+        <p className='description' style={{
+          fontSize: '2rem',
+          color: 'black',
+          fontWeight: 'bold',
+        }}>
+          Be part of the team as we train for the 2026 Chicago Marathon — join us chasing 26.2 miles! 🏃‍♀️🏃‍♂️✨
+        </p>
       </div>
     </div>
   )

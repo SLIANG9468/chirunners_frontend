@@ -1,0 +1,77 @@
+.profile-view {
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px 0;
+}
+
+.profile-container {
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-form-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0 50px 40px;
+}
+
+.update-button,
+.delete-button {
+  flex: 1;
+  max-width: 400px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.update-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.update-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #da190b;
+}
+
+.update-button:active,
+.delete-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .profile-actions {
+    flex-direction: column;
+    padding: 0 20px 40px;
+  }
+
+  .update-button,
+  .delete-button {
+    max-width: 100%;
+    width: 100%;
+  }
+}

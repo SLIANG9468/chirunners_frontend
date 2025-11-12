@@ -38,21 +38,23 @@ export const AuthProvider = ({ children }) =>{
             })
         })
 
-        if (!response.ok){
-            console.error('There was an issue logging in.')
-        }
-
         const data = await response.json() // translating to js
 
         console.log(data)
         if ('error' in data){ // checking the login response for an error from my backend
-            return false
+            return { success: false, error: data.error }
         }
+        
+        if (!response.ok){
+            console.error('There was an issue logging in.')
+            return { success: false, error: 'Login failed' }
+        }
+        
         setRunner(data.runner)
         setToken(data.token)
         localStorage.setItem('runner', JSON.stringify(data.runner))
         localStorage.setItem('token', data.token)
-        return true
+        return { success: true, token: data.token }
     }
 
     const logout = () => {
@@ -74,6 +76,39 @@ export const AuthProvider = ({ children }) =>{
 
         const responseData = await response.json()
         console.log(responseData)
+        
+        if (response.ok) {
+            const loginSuccess = await login(registerData.email, registerData.password)
+            
+            if (loginSuccess.success) {
+                // Add the runner to team1 after successful login
+                try {
+                    const addToTeamResponse = await fetch(API_URL + '/runners/add-to-team/1', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer ' + loginSuccess.token
+                        }
+                    })
+                    
+                    const addToTeamData = await addToTeamResponse.json()
+                    console.log('Added to team:', addToTeamData)
+                    
+                    if (!addToTeamResponse.ok) {
+                        console.error('Failed to add runner to team1:', addToTeamData.error)
+                    } else if (addToTeamData.message) {
+                        // Return the success message from backend
+                        return { success: true, message: addToTeamData.message }
+                    }
+                } catch (error) {
+                    console.error('Error adding runner to team1:', error)
+                }
+            }
+            
+            return { success: true }
+        }
+        
+        return { success: false, error: responseData.error || 'Registration failed' }
     }
 
     //Add Team Function
@@ -91,6 +126,12 @@ export const AuthProvider = ({ children }) =>{
         console.log(responseData)
     }
 
+    //Update Runner Function
+    const updateRunner = (updatedRunnerData) => {
+        setRunner(updatedRunnerData)
+        localStorage.setItem('runner', JSON.stringify(updatedRunnerData))
+    }
+
     const value = {
         token,
         runner,
@@ -98,6 +139,7 @@ export const AuthProvider = ({ children }) =>{
         logout,
         registerRunner, 
         addTeam,
+        updateRunner,
         isAuthenticated: token ? true : false
     }
         
