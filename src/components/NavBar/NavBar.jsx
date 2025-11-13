@@ -22,7 +22,7 @@ const NavBar = () => {
       
             <NavLink className={'navLink'} to='/'>Home</NavLink>
             <NavLink className={'navLink'} to='/races'>Races</NavLink>
-            <NavLink className={'navLink'} to='/store'>Store</NavLink>
+            <NavLink className={'navLink'} to='/store'>Event</NavLink>
 
 
             {isAuthenticated ?

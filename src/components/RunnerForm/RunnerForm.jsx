@@ -101,7 +101,7 @@ const RunnerForm = ({ submitFunction, initialData = null, isUpdate = false, hide
               placeholder='Enter password' 
               onChange={(e)=>handleChange(e)} 
               value={formData.password}
-              required 
+              required
             />
           </div>
         )}

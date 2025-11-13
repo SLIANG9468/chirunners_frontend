@@ -1,7 +1,6 @@
 .login-view {
-  min-height: calc(100vh - 100px);
   background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
-  padding: 60px 20px 40px;
+  padding: 60px 20px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;

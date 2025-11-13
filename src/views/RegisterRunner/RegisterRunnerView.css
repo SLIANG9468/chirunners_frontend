@@ -1,7 +1,6 @@
 .register-runner-view {
-  min-height: calc(100vh - 100px);
   background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
-  padding: 20px 0;
+  padding: 20px 0 80px;
 }
 
 .error-message {
