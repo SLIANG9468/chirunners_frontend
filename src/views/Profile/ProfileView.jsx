@@ -10,6 +10,7 @@ const ProfileView = () => {
   const [showDeleteButton, setShowDeleteButton] = useState(true);
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   if (!runner) {
     return (
@@ -79,33 +80,34 @@ const ProfileView = () => {
   };
 
   const handleDelete = async () => {
-    if (window.confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-      // Clear previous messages
-      setSuccessMessage('');
-      setErrorMessage('');
-      
-      try {
-        const API_URL = import.meta.env.VITE_API_URL;
-        const response = await fetch(`${API_URL}/runners`, {
-          method: 'DELETE',
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-
-        if (response.ok) {
-          setSuccessMessage('Account deleted successfully');
-          setTimeout(() => {
-            logout();
-            navigate('/');
-          }, 1500);
-        } else {
-          setErrorMessage('Failed to delete account');
+    // Clear previous messages
+    setSuccessMessage('');
+    setErrorMessage('');
+    
+    try {
+      const API_URL = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${API_URL}/runners`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`
         }
-      } catch (error) {
-        console.error('Error deleting account:', error);
-        setErrorMessage('An error occurred while deleting your account');
+      });
+
+      if (response.ok) {
+        setSuccessMessage('Account deleted successfully');
+        setShowDeleteModal(false);
+        setTimeout(() => {
+          logout();
+          navigate('/');
+        }, 1500);
+      } else {
+        setErrorMessage('Failed to delete account');
+        setShowDeleteModal(false);
       }
+    } catch (error) {
+      console.error('Error deleting account:', error);
+      setErrorMessage('An error occurred while deleting your account');
+      setShowDeleteModal(false);
     }
   };
 
@@ -124,11 +126,28 @@ const ProfileView = () => {
           <button className="update-button" type="submit" form="runner-form">
             Update
           </button>
-          <button className="delete-button" onClick={handleDelete}>
+          <button className="delete-button" onClick={() => setShowDeleteModal(true)}>
             Delete Account
           </button>
         </div>
       </div>
+
+      {showDeleteModal && (
+        <div className="delete-modal-overlay" onClick={() => setShowDeleteModal(false)}>
+          <div className="delete-modal" onClick={(e) => e.stopPropagation()}>
+            <h2>Delete Account</h2>
+            <p>Do you really want to delete your account? This action cannot be undone.</p>
+            <div className="modal-buttons">
+              <button className="modal-cancel-button" onClick={() => setShowDeleteModal(false)}>
+                Cancel
+              </button>
+              <button className="modal-delete-button" onClick={handleDelete}>
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
