@@ -1,48 +1,25 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import backgroundImage from '../../assets/chiTop.webp'
+import heroImage from '../../assets/chiTop.JPG'
 import './HomeView.css'
 
 const HomeView = () => {
   const navigate = useNavigate();
 
   return (
-    <div 
-      className='home-container'
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        height: 'calc(100vh - 100px)',
-        maxHeight: 'calc(100vh - 100px)',
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        overflow: 'hidden',
-        padding: '20px'
-      }}
-    >
-      <div className='home-content' style={{ 
-        marginTop: '0',
-        background: 'transparent',
-        backdropFilter: 'none',
-        padding: '20px',
-        maxWidth: '1200px'
-      }}>
-        <p className='description' style={{
-          fontSize: '2rem',
-          color: 'black',
-          fontWeight: 'bold',
-        }}>
-          Chinese American runners in the Chicago area coming together to run, learn, and have fun.
+    <div className='home-container'>
+      <div className='home-image-container'>
+        <img src={heroImage} alt="Chi Running Club" className='home-hero-image' />
+      </div>
+      <div className='home-content'>
+        <p className='description'>
+          The CHI Running Club is a non-profit organization formed by Chinese American running enthusiasts in the greater Chicago area. We are dedicated to promoting a healthy lifestyle and fostering a sense of community through running. Each week, we organize group runs in various locations throughout Chicago and its suburbs, catering to runners of all levels—from beginners to seasoned athletes. Our runs provide a fantastic opportunity to meet fellow running enthusiasts, share tips, and enjoy the beautiful scenery that the area has to offer. In addition to our weekly runs, we also host special events, and social gatherings throughout the year. 
         </p>
-        <p className='description' style={{
-          fontSize: '2rem',
-          color: 'black',
-          fontWeight: 'bold',
-        }}>
-          Be part of the team as we train for the 2026 Chicago Marathon — join us chasing 26.2 miles! 🏃‍♀️🏃‍♂️✨
+        <p className='description'>
+          You can also contact us <a href="mailto:info@chirunners.org" className='contact-link'>info@chirunners.org</a>
+        </p>
+        <p className='description'>
+          We invite you to join us for a run and become part of our vibrant community! Please visit our Strava club page: <a href="https://www.strava.com/clubs/chirunners" target="_blank" rel="noopener noreferrer" className='strava-link'>https://www.strava.com/clubs/chirunners</a>
         </p>
       </div>
     </div>

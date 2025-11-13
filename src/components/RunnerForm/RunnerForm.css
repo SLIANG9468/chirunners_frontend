@@ -9,7 +9,7 @@
 
 .runner-form-container h2 {
   text-align: center;
-  color: #333;
+  color: #D32F2F;
   margin-bottom: 30px;
   font-size: 2.5rem;
   font-weight: bold;
@@ -38,14 +38,14 @@
 
 .form-group label {
   font-weight: 600;
-  color: #333;
+  color: #333333;
   font-size: 1.1rem;
 }
 
 .form-group input,
 .form-group select {
   padding: 12px;
-  border: 2px solid #ddd;
+  border: 2px solid #BDBDBD;
   border-radius: 6px;
   font-size: 1.2rem;
   transition: border-color 0.3s ease;
@@ -55,35 +55,35 @@
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #D32F2F;
 }
 
 .form-group input::placeholder {
-  color: #999;
+  color: #BDBDBD;
 }
 
 .waiver-section {
   margin-top: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 2px solid #e0e0e0;
+  background-color: #F5F5F5;
+  border: 2px solid #BDBDBD;
   border-radius: 8px;
 }
 
 .waiver-section h3 {
-  color: #333;
+  color: #D32F2F;
   margin-bottom: 15px;
   font-size: 1.6rem;
 }
 
 .waiver-text {
   font-size: 1.2rem;
-  color: #555;
+  color: #333333;
   line-height: 1.6;
   margin-bottom: 15px;
   padding: 15px;
   background-color: #fff;
-  border-left: 4px solid #4CAF50;
+  border-left: 4px solid #FBC02D;
   border-radius: 4px;
 }
 
@@ -97,17 +97,18 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+  accent-color: #D32F2F;
 }
 
 .waiver-checkbox label {
   font-size: 1.1rem;
-  color: #333;
+  color: #333333;
   cursor: pointer;
 }
 
 .submit-button {
   padding: 15px 30px;
-  background-color: #4CAF50;
+  background-color: #D32F2F;
   color: white;
   border: none;
   border-radius: 6px;
@@ -119,7 +120,7 @@
 }
 
 .submit-button:hover {
-  background-color: #45a049;
+  background-color: #B71C1C;
 }
 
 .submit-button:active {

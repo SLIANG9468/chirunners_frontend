@@ -1,4 +1,24 @@
+:root {
+  /* Primary (identity) */
+  --primary-red: #D32F2F;
+  
+  /* Secondary (balance and calm) */
+  --bg-warm-white: #FAFAFA;
+  --bg-off-white: #F5F5F5;
+  --text-charcoal: #333333;
+  --text-cool-gray: #BDBDBD;
+  
+  /* Accent (energy & freshness) */
+  --accent-yellow: #FBC02D;
+}
+
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-warm-white);
+  color: var(--text-charcoal);
 }

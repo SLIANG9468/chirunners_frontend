@@ -1,0 +1,227 @@
+.races-view {
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+  padding: 40px 20px;
+}
+
+.races-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.races-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.races-header h1 {
+  color: #D32F2F;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+}
+
+.races-subtitle {
+  color: #333333;
+  font-size: 1.3rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Weather Section */
+.weather-card {
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #333333;
+  border: 2px solid #FBC02D;
+}
+
+.weather-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 25px 0;
+  text-align: center;
+  color: #D32F2F;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.weather-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #BDBDBD;
+}
+
+.weather-item.forecast-item {
+  grid-column: 1 / -1;
+}
+
+.weather-label {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  opacity: 0.85;
+  font-weight: 600;
+  color: #333333;
+}
+
+.weather-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.forecast-text {
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.weather-loading,
+.weather-error {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333333;
+}
+
+.weather-error {
+  background-color: #FFEBEE;
+  color: #D32F2F;
+}
+
+.races-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.race-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.race-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 5px solid #D32F2F;
+  cursor: pointer;
+}
+
+.race-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.2);
+  border-left-width: 8px;
+}
+
+.race-name {
+  color: #D32F2F;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+.race-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.race-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.detail-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.detail-text {
+  color: #333333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.race-register {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #BDBDBD;
+  color: #D32F2F;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .races-view {
+    padding: 30px 15px;
+  }
+
+  .races-header {
+    padding: 30px 15px;
+  }
+
+  .races-header h1 {
+    font-size: 2rem;
+  }
+
+  .races-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .weather-card {
+    padding: 20px;
+  }
+
+  .weather-title {
+    font-size: 1.4rem;
+  }
+
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weather-value {
+    font-size: 1.5rem;
+  }
+
+  .forecast-text {
+    font-size: 1rem;
+  }
+
+  .race-card {
+    padding: 20px;
+  }
+
+  .race-name {
+    font-size: 1.4rem;
+  }
+
+  .detail-text {
+    font-size: 1rem;
+  }
+}

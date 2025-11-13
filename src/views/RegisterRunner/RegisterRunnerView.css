@@ -1,6 +1,6 @@
 .register-runner-view {
   min-height: calc(100vh - 100px);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
   padding: 20px 0;
 }
 
@@ -8,24 +8,24 @@
   max-width: 1200px;
   margin: 20px auto 0;
   padding: 15px 20px;
-  background-color: #f44336;
+  background-color: #D32F2F;
   color: white;
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
 }
 
 .success-message {
   max-width: 1200px;
   margin: 20px auto 0;
   padding: 15px 20px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: #FBC02D;
+  color: #333333;
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 2px 8px rgba(251, 192, 45, 0.3);
 }

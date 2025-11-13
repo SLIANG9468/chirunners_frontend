@@ -8,6 +8,8 @@ const ProfileView = () => {
   const { runner, token, logout, updateRunner } = useAuth();
   const navigate = useNavigate();
   const [showDeleteButton, setShowDeleteButton] = useState(true);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   if (!runner) {
     return (
@@ -22,6 +24,10 @@ const ProfileView = () => {
     console.log('First name:', formData.first_name);
     console.log('Last name:', formData.last_name);
     console.log('Phone:', formData.phone);
+    
+    // Clear previous messages
+    setSuccessMessage('');
+    setErrorMessage('');
     
     try {
       const API_URL = import.meta.env.VITE_API_URL;
@@ -46,34 +52,38 @@ const ProfileView = () => {
             updateRunner(data.runner);
           }
           
-          alert('Profile updated successfully!');
+          setSuccessMessage('Profile updated successfully!');
         } else {
-          alert('Profile updated successfully!');
+          setSuccessMessage('Profile updated successfully!');
         }
         // No reload needed - React will automatically re-render with updated state
       } else {
         const contentType = response.headers.get('content-type');
-        let errorMessage = 'Unknown error';
+        let errorMsg = 'Unknown error';
         
         if (contentType && contentType.includes('application/json')) {
           const data = await response.json();
-          errorMessage = data.error || data.message || 'Unknown error';
+          errorMsg = data.error || data.message || 'Unknown error';
         } else {
           const text = await response.text();
-          errorMessage = `Server error: ${response.status} ${response.statusText}`;
+          errorMsg = `Server error: ${response.status} ${response.statusText}`;
           console.error('Server returned non-JSON response:', text);
         }
         
-        alert(`Failed to update profile: ${errorMessage}`);
+        setErrorMessage(`Failed to update profile: ${errorMsg}`);
       }
     } catch (error) {
       console.error('Error updating profile:', error);
-      alert(`An error occurred while updating your profile: ${error.message}`);
+      setErrorMessage(`An error occurred while updating your profile: ${error.message}`);
     }
   };
 
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+      // Clear previous messages
+      setSuccessMessage('');
+      setErrorMessage('');
+      
       try {
         const API_URL = import.meta.env.VITE_API_URL;
         const response = await fetch(`${API_URL}/runners`, {
@@ -84,15 +94,17 @@ const ProfileView = () => {
         });
 
         if (response.ok) {
-          alert('Account deleted successfully');
-          logout();
-          navigate('/');
+          setSuccessMessage('Account deleted successfully');
+          setTimeout(() => {
+            logout();
+            navigate('/');
+          }, 1500);
         } else {
-          alert('Failed to delete account');
+          setErrorMessage('Failed to delete account');
         }
       } catch (error) {
         console.error('Error deleting account:', error);
-        alert('An error occurred while deleting your account');
+        setErrorMessage('An error occurred while deleting your account');
       }
     }
   };
@@ -100,6 +112,8 @@ const ProfileView = () => {
   return (
     <div className="profile-view">
       <div className="profile-form-wrapper">
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
         <RunnerForm 
           submitFunction={handleUpdate} 
           initialData={runner}

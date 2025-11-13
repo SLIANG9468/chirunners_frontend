@@ -1,6 +1,6 @@
 .team-view {
   min-height: calc(100vh - 100px);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
   padding: 40px 20px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .team-header h1 {
-  color: #333;
+  color: #D32F2F;
   font-size: 3rem;
   margin: 0 0 20px 0;
   text-align: center;
@@ -26,7 +26,7 @@
 }
 
 .team-description {
-  color: #666;
+  color: #333333;
   font-size: 1.2rem;
   text-align: center;
   margin: 0 0 20px 0;
@@ -36,20 +36,20 @@
 .team-contact {
   text-align: center;
   padding: 15px;
-  background-color: #f8f9fa;
+  background-color: #F5F5F5;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
 .contact-label {
-  color: #888;
+  color: #BDBDBD;
   font-size: 1rem;
   font-weight: 600;
   margin-right: 10px;
 }
 
 .contact-name {
-  color: #4CAF50;
+  color: #D32F2F;
   font-size: 1.1rem;
   font-weight: bold;
 }
@@ -60,7 +60,7 @@
   gap: 40px;
   flex-wrap: wrap;
   padding-top: 20px;
-  border-top: 2px solid #f0f0f0;
+  border-top: 2px solid #F5F5F5;
 }
 
 .stat-item {
@@ -71,13 +71,13 @@
 }
 
 .stat-label {
-  color: #888;
+  color: #BDBDBD;
   font-size: 1rem;
   font-weight: 600;
 }
 
 .stat-value {
-  color: #4CAF50;
+  color: #FBC02D;
   font-size: 1.8rem;
   font-weight: bold;
 }
@@ -90,7 +90,7 @@
 }
 
 .runners-section h2 {
-  color: #333;
+  color: #333333;
   font-size: 2.2rem;
   margin: 0 0 30px 0;
   font-weight: bold;
@@ -98,7 +98,7 @@
 
 .no-runners {
   text-align: center;
-  color: #888;
+  color: #BDBDBD;
   font-size: 1.2rem;
   padding: 40px;
 }
@@ -110,8 +110,8 @@
 }
 
 .runner-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border: 2px solid #e0e0e0;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+  border: 2px solid #F5F5F5;
   border-radius: 10px;
   padding: 25px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -120,7 +120,7 @@
 .runner-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border-color: #4CAF50;
+  border-color: #D32F2F;
 }
 
 .runner-header {
@@ -129,18 +129,18 @@
   align-items: center;
   margin-bottom: 15px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #4CAF50;
+  border-bottom: 2px solid #D32F2F;
 }
 
 .runner-name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #333333;
 }
 
 .runner-role {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #FBC02D;
+  color: #333333;
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 0.85rem;

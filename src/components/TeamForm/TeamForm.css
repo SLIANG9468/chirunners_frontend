@@ -1,0 +1,99 @@
+.team-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-form-container h2 {
+  text-align: center;
+  color: #D32F2F;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.team-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.team-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-form .form-group label {
+  font-weight: 600;
+  color: #333333;
+  font-size: 1.2rem;
+}
+
+.team-form .form-group input {
+  padding: 15px;
+  border: 2px solid #BDBDBD;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.team-form .form-group input:focus {
+  outline: none;
+  border-color: #D32F2F;
+}
+
+.team-form .form-group input::placeholder {
+  color: #BDBDBD;
+}
+
+.team-form .submit-button {
+  padding: 18px 40px;
+  background-color: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-top: 15px;
+}
+
+.team-form .submit-button:hover {
+  background-color: #B71C1C;
+}
+
+.team-form .submit-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-form-container {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  .team-form-container h2 {
+    font-size: 2rem;
+  }
+
+  .team-form .form-group label {
+    font-size: 1.1rem;
+  }
+
+  .team-form .form-group input {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .team-form .submit-button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+}

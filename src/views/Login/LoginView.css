@@ -1,6 +1,6 @@
 .login-view {
   min-height: calc(100vh - 100px);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
   padding: 60px 20px 40px;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
 
 .login-form-container h2 {
   text-align: center;
-  color: #333;
+  color: #D32F2F;
   margin-bottom: 40px;
   font-size: 3rem;
   font-weight: bold;
@@ -39,13 +39,13 @@
 
 .login-form .form-group label {
   font-weight: 600;
-  color: #333;
+  color: #333333;
   font-size: 1.3rem;
 }
 
 .login-form .form-group input {
   padding: 16px;
-  border: 2px solid #ddd;
+  border: 2px solid #BDBDBD;
   border-radius: 6px;
   font-size: 1.4rem;
   transition: border-color 0.3s ease;
@@ -54,16 +54,16 @@
 
 .login-form .form-group input:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #D32F2F;
 }
 
 .login-form .form-group input::placeholder {
-  color: #999;
+  color: #BDBDBD;
 }
 
 .login-form .submit-button {
   padding: 18px 40px;
-  background-color: #4CAF50;
+  background-color: #D32F2F;
   color: white;
   border: none;
   border-radius: 6px;
@@ -75,7 +75,7 @@
 }
 
 .login-form .submit-button:hover {
-  background-color: #45a049;
+  background-color: #B71C1C;
 }
 
 .login-form .submit-button:active {
@@ -87,13 +87,13 @@
   width: 100%;
   margin-bottom: 20px;
   padding: 18px 24px;
-  background-color: #f44336;
+  background-color: #D32F2F;
   color: white;
   border-radius: 8px;
   font-size: 1.3rem;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
 }
 
 /* Responsive design */

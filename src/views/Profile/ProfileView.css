@@ -1,12 +1,12 @@
 .profile-view {
   min-height: calc(100vh - 100px);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
   padding: 20px 0;
 }
 
 .profile-container {
   min-height: calc(100vh - 100px);
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
   padding: 40px 20px;
   display: flex;
   justify-content: center;
@@ -16,6 +16,43 @@
 .profile-form-wrapper {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.success-message {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 20px;
+  margin: 20px 50px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  animation: slideDown 0.3s ease;
+}
+
+.error-message {
+  background-color: #D32F2F;
+  color: white;
+  padding: 15px 20px;
+  margin: 20px 50px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .profile-actions {
@@ -40,21 +77,21 @@
 }
 
 .update-button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #FBC02D;
+  color: #333333;
 }
 
 .update-button:hover {
-  background-color: #45a049;
+  background-color: #F9A825;
 }
 
 .delete-button {
-  background-color: #f44336;
+  background-color: #D32F2F;
   color: white;
 }
 
 .delete-button:hover {
-  background-color: #da190b;
+  background-color: #B71C1C;
 }
 
 .update-button:active,
@@ -64,6 +101,12 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .success-message,
+  .error-message {
+    margin: 20px 20px;
+    font-size: 1rem;
+  }
+
   .profile-actions {
     flex-direction: column;
     padding: 0 20px 40px;

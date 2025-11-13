@@ -21,13 +21,15 @@ const NavBar = () => {
     <ul id="navBar">
       
             <NavLink className={'navLink'} to='/'>Home</NavLink>
+            <NavLink className={'navLink'} to='/races'>Races</NavLink>
             <NavLink className={'navLink'} to='/store'>Store</NavLink>
 
 
             {isAuthenticated ?
               <>
                 <NavLink className={'navLink'} to='/addteam'>Add Team</NavLink>
-                <NavLink className={'navLink'} to='/myteam'>My Team</NavLink>
+                <NavLink className={'navLink'} to='/myteammates'>My Teammates</NavLink>
+                <NavLink className={'navLink'} to='/myteams'>My Teams</NavLink>
                 <NavLink to='/profile'className='navLink'>Profile</NavLink>
                 <span onClick={handleLogout} className="navLink" style={{cursor: 'pointer'}}>Logout</span>
               </>

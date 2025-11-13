@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
+import './TeamsView.css'
 
 
 const TeamsView = () => {
@@ -36,25 +37,39 @@ const TeamsView = () => {
     },[]);
 
   return (
-    <div>
-        <h1>
-            My Teams
-        </h1>
-        {teams.length === 0?(
-            <p className = 'no-teams'> No Team found</p>
-        ):(
-            <div className='box'>
-                {teams?.map((team) => (
-                    <div key = {team.id}>
-                        <h3>
-                            Team Name: {team.team_name}; Country: {team.country}; City: {team.city}; Contact: {team.team_contact.first_name}
-                        </h3> 
-                    </div>
-                )
-                )}
-            </div>
-        )
-        }
+    <div className="teams-view">
+      <div className="teams-container">
+        <h1 className="teams-title">My Teams</h1>
+        {teams.length === 0 ? (
+          <p className="no-teams">No Team found</p>
+        ) : (
+          <div className="teams-grid">
+            {teams?.map((team) => (
+              <div key={team.id} className="team-card">
+                <h2 className="team-name">{team.team_name}</h2>
+                <div className="team-details">
+                  <div className="team-info">
+                    <span className="info-icon">📍</span>
+                    <span className="info-text">
+                      {team.city}, {team.country}
+                    </span>
+                  </div>
+                  <div className="team-info">
+                    <span className="info-icon">👤</span>
+                    <span className="info-text">
+                      {team.team_contact.first_name} {team.team_contact.last_name}
+                    </span>
+                  </div>
+                  <div className="team-info">
+                    <span className="info-icon">✉️</span>
+                    <span className="info-text">{team.team_contact.email}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   )
 };

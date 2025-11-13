@@ -17,13 +17,8 @@ const RegisterRunnerView = () => {
     if (result.success) {
       if (result.message) {
         setSuccessMessage(result.message);
-        // Wait 2 seconds to show the message before navigating
-        setTimeout(() => {
-          navigate('/profile');
-        }, 2000);
-      } else {
-        navigate('/profile');
       }
+      navigate('/profile');
     } else {
       setError(result.error);
     }
