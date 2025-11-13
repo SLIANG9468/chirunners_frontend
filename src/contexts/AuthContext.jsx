@@ -27,6 +27,10 @@ export const AuthProvider = ({ children }) =>{
 
     //login function
     const login = async (email, password) =>{
+        console.log('API_URL:', API_URL);
+        console.log('Full login URL:', API_URL + '/runners/login');
+        console.log('Request body:', { email, password });
+        
         const response = await fetch(API_URL + '/runners/login', {
             method: 'POST',
             headers: {
@@ -38,6 +42,7 @@ export const AuthProvider = ({ children }) =>{
             })
         })
 
+        console.log('Response status:', response.status);
         const data = await response.json() // translating to js
 
         console.log(data)
